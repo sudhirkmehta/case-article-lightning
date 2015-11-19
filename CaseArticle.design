@@ -1,0 +1,4 @@
+<design:component>
+	<design:attribute name="caseId" label="Case ID" description="Case ID of the selected record." />
+    <design:attribute name="pageTitle" label="Page Title" description="Page Title for the component." />
+</design:component>

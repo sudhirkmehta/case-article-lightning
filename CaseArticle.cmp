@@ -1,0 +1,13 @@
+<aura:component controller="CaseArticleController" implements="forceCommunity:availableForAllPageTypes">
+	<aura:attribute name="pageTitle" type="String" default="ARTICLES"/>
+    <aura:attribute name="caseId" type="String"/>
+    <aura:attribute name="baseUrl" type="String"/>
+    <aura:attribute name="caseArticles" type="KnowledgeArticleVersion[]"/>
+    <aura:attribute name="articleCount" type="Integer" default='0'/>    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <br />
+    <b>{!v.pageTitle} ({!v.articleCount})</b>
+    <aura:iteration items="{!v.caseArticles}" var="art">
+        <li><ui:outputURL value="{!v.baseUrl+art.UrlName}" label="{!art.Title}" target='_blank'/></li>
+    </aura:iteration>
+</aura:component>
